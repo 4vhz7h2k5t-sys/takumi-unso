@@ -75,3 +75,6 @@ body:not([data-page=admin]) .section-label>.eyebrow:before{content:'';display:in
 .hero-scroll-story .hero-copy,.hero-scroll-story .hero-bottom,.hero-scroll-story .hero-photo-index{opacity:0;visibility:hidden}
 .hero-scroll-story .hero-shade{opacity:.28}
 @media(prefers-reduced-motion:reduce){.hero-scroll-story{height:auto}.hero-scroll-story .hero-fullscreen{position:relative}.hero-scroll-story .hero-copy,.hero-scroll-story .hero-bottom,.hero-scroll-story .hero-photo-index{opacity:1!important;visibility:visible!important}.hero-scroll-story .hero-shade{opacity:1}}
+
+/* Geometric arrows retain their appearance across mobile font stacks. */
+.icon-arrow{display:inline-block;width:1em;height:1em;flex-shrink:0;vertical-align:-.125em;pointer-events:none}
