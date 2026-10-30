@@ -65,3 +65,7 @@ body:not([data-page=admin]) .section-label>.eyebrow:before{content:'';display:in
 .carry-rule{position:absolute;left:0;bottom:-1px;display:block;height:2px;width:36%;background:var(--pink);transform-origin:left;pointer-events:none}.service-photo>.carry-static-image{transform-origin:center}.carry-photo-word{pointer-events:none}
 @media(max-width:760px){.hero-fullscreen .hero-bottom{height:56px;padding:0 var(--gutter);gap:10px}.hero-fullscreen .hero-bottom>span:first-child{font-size:8px}.hero-fullscreen .hero-bottom>span:nth-child(2){font-size:8px}.carry-rule{width:28%}}
 @media(prefers-reduced-motion:reduce){.carry-static-image,.carry-photo-word,.service-item{transform:none!important}.carry-rule{transform:scaleX(1)!important}}
+/* Final layout polish: centre the desktop form; repeat the livery in the footer. */
+@media(min-width:761px){#inquiry-form,#inquiry-preview{margin-left:auto;margin-right:auto}}
+.demo-note{position:relative;border-top:0;padding-top:32px}.demo-note:before{content:'';position:absolute;top:0;left:0;right:0;height:10px;background:linear-gradient(to bottom,var(--pink) 0 2px,var(--truck-yellow) 2px 8px,var(--pink) 8px 10px);pointer-events:none}
+@media(max-width:760px){.demo-note{padding-top:28px}}

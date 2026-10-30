@@ -1,0 +1,18 @@
+[
+  {
+    "footerStripe": "10px",
+    "formLeft": 22,
+    "formRight": 368,
+    "formWidth": 346,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "footerStripe": "10px",
+    "formLeft": 22,
+    "formRight": 298,
+    "formWidth": 276,
+    "scrollWidth": 320,
+    "width": 320
+  }
+]
