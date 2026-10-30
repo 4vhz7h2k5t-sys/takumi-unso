@@ -3,7 +3,7 @@ import {readFileSync,existsSync} from 'node:fs';
 import {validateContent} from '../worker/index.js';
 import {initialRecruitment} from '../src/content.js';
 for(const page of ['index.html','company/index.html','recruit/index.html','admin/index.html']){
- const html=readFileSync('dist/'+page,'utf8');assert.match(html,/<html lang="ja">/);assert.match(html,/noindex,nofollow,noarchive/);assert.match(html,/非公式デモ/);assert.equal((html.match(/<h1[ >]/g)||[]).length,1);
+ const html=readFileSync('dist/'+page,'utf8');assert.match(html,/<html lang="ja">/);assert.match(html,/noindex,nofollow,noarchive/);assert.match(html,/非公式デモ/);assert.doesNotMatch(html,/href=["'][^"']*wixsite\.com/i);assert.equal((html.match(/<h1[ >]/g)||[]).length,1);
  for(const [,src] of html.matchAll(/(?:src|href)="(\/(?:images|assets|fonts)\/[^"?#]+)"/g))assert.ok(existsSync('dist'+src),`Missing ${src}`);
 }
 const good={...initialRecruitment,version:1};assert.equal(validateContent(good).jobs.length,2);
