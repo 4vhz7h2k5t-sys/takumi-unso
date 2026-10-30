@@ -69,3 +69,9 @@ body:not([data-page=admin]) .section-label>.eyebrow:before{content:'';display:in
 @media(min-width:761px){#inquiry-form,#inquiry-preview{margin-left:auto;margin-right:auto}}
 .demo-note{position:relative;border-top:0;padding-top:32px}.demo-note:before{content:'';position:absolute;top:0;left:0;right:0;height:10px;background:linear-gradient(to bottom,var(--pink) 0 2px,var(--truck-yellow) 2px 8px,var(--pink) 8px 10px);pointer-events:none}
 @media(max-width:760px){.demo-note{padding-top:28px}}
+/* Photo first. Native sticky gives the copy room to emerge through real scrolling. */
+.hero-scroll-story{height:210svh;position:relative;background:var(--dark)}
+.hero-scroll-story .hero-fullscreen{position:sticky;top:0;height:100svh;max-height:none}
+.hero-scroll-story .hero-copy,.hero-scroll-story .hero-bottom,.hero-scroll-story .hero-photo-index{opacity:0;visibility:hidden}
+.hero-scroll-story .hero-shade{opacity:.28}
+@media(prefers-reduced-motion:reduce){.hero-scroll-story{height:auto}.hero-scroll-story .hero-fullscreen{position:relative}.hero-scroll-story .hero-copy,.hero-scroll-story .hero-bottom,.hero-scroll-story .hero-photo-index{opacity:1!important;visibility:visible!important}.hero-scroll-story .hero-shade{opacity:1}}

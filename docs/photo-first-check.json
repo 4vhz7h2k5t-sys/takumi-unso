@@ -1,0 +1,30 @@
+[
+  {
+    "copyRight": 298,
+    "heroHeight": 740,
+    "opacity": "0",
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "copyRight": 368,
+    "heroHeight": 844,
+    "opacity": "0",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "copyRight": 736,
+    "heroHeight": 1024,
+    "opacity": "0",
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "copyRight": 1380,
+    "heroHeight": 900,
+    "opacity": "0",
+    "scrollWidth": 1440,
+    "width": 1440
+  }
+]
