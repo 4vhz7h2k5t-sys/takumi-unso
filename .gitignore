@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.wrangler/
+.dev.vars
+.env*
+research/*.html
+research/*.jpeg
+research/*.jpg
+research/*.png
+research/

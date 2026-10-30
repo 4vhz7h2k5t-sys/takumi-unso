@@ -1,0 +1,128 @@
+from pathlib import Path
+wheel='''<g class="wheel" data-wheel="{x}" transform="translate({x} 632)"><circle r="34" fill="#101816"/><circle r="29" fill="#232c2a" stroke="#3d4541" stroke-width="1"/><circle r="21" fill="url(#chrome)"/><circle r="15" fill="#b9c5c0" stroke="#56615c" stroke-width="2"/><circle r="7" fill="#53645b"/>{bolts}</g>'''
+import math
+wheels=''
+for x in [318,396,474,1040,1120,1332]:
+ bolts=''.join(f'<circle cx="{math.cos(a*math.pi/3)*11:.1f}" cy="{math.sin(a*math.pi/3)*11:.1f}" r="2" fill="#526058"/>' for a in range(6))
+ wheels+=wheel.format(x=x,bolts=bolts)
+svg='''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 850" fill="none" aria-labelledby="sceneTitle sceneDesc" role="img">
+<title id="sceneTitle">たくみ運送のVOLVO FHと精密機械輸送</title><desc id="sceneDesc">実車写真を参考に描いた濃緑色のVOLVO FH。黄とピンクの帯、たくみ運送の社名を再現。荷物の積載・固縛・輸送・到着を表現したイラストです。</desc>
+<defs>
+ <linearGradient id="paint" x1="1180" y1="340" x2="1420" y2="620" gradientUnits="userSpaceOnUse"><stop stop-color="#3c6452"/><stop offset=".4" stop-color="#163e2e"/><stop offset=".8" stop-color="#0d2c23"/><stop offset="1" stop-color="#284b3c"/></linearGradient>
+ <linearGradient id="paintSide" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#426955"/><stop offset=".24" stop-color="#214a36"/><stop offset="1" stop-color="#0e2b23"/></linearGradient>
+ <linearGradient id="glass" x1="1200" y1="370" x2="1380" y2="490" gradientUnits="userSpaceOnUse"><stop stop-color="#5a7570"/><stop offset=".4" stop-color="#284342"/><stop offset="1" stop-color="#102629"/></linearGradient>
+ <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3f5ee"/><stop offset=".28" stop-color="#85958b"/><stop offset=".5" stop-color="#dce2d9"/><stop offset=".77" stop-color="#6b7b71"/><stop offset="1" stop-color="#d7ddd4"/></linearGradient>
+ <linearGradient id="box" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b7c2b7"/><stop offset="1" stop-color="#6b7c70"/></linearGradient>
+ <pattern id="mesh" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M0 0L5 5M5 0L0 5" stroke="#7c8f7f" stroke-width=".6"/></pattern>
+ <pattern id="warehouseLines" width="80" height="60" patternUnits="userSpaceOnUse"><path d="M0 0V60M0 59H80" stroke="currentColor" stroke-width="1"/></pattern>
+ <filter id="soft"><feGaussianBlur stdDeviation="9"/></filter>
+ <symbol id="tree" viewBox="0 0 70 100"><path d="M35 0L3 63H19L0 85H70L51 63H67Z" fill="currentColor"/><path d="M32 80H38V100H32Z" fill="currentColor"/></symbol>
+</defs>
+<g id="sky" opacity=".6"><circle cx="1330" cy="220" r="65" fill="#f6f0c0"/><path d="M250 240H440M1030 160H1160M600 120H730" stroke="#fff" stroke-width="2" opacity=".3"/></g>
+<g id="landscape" opacity="0">
+ <g id="far-mountains" fill="#6e8c77"><path d="M-800 610L-590 420L-400 520L-100 280L170 470L420 330L770 560L990 390L1280 500L1540 290L1830 510L2130 340L2500 600V760H-800Z"/></g>
+ <g id="near-mountains" fill="#42694f"><path d="M-500 640L-200 500L80 620L300 470L590 620L800 480L1150 640L1420 500L1700 640L1950 440L2300 610V760H-500Z"/></g>
+ <g id="trees" color="#2c4d38">'''
+for i,x in enumerate(range(-600,2300,82)):
+ svg+=f'<use href="#tree" x="{x}" y="{490+i%4*16}" width="{60+i%3*12}" height="{130+i%3*12}"/>'
+svg+='''</g>
+ <g id="bridge" stroke="#6e8171" stroke-width="7" opacity=".6"><path d="M-300 685H2100M-300 735H2100M-200 685V850M50 685V850M300 685V850M550 685V850M800 685V850M1050 685V850M1300 685V850M1550 685V850M1800 685V850"/></g>
+</g>
+<g id="warehouse" color="#a5b0a1">
+ <path d="M-160 630V280L800 170L1780 280V630" fill="#d3d8cb"/>
+ <path d="M-160 300L800 186L1780 300" stroke="#82917e" stroke-width="11"/>
+ <path d="M0 335H1600V630H0Z" fill="url(#warehouseLines)"/>
+ <path d="M160 630V355H590V630M1050 630V355H1480V630" fill="#b6c0b0" stroke="#98a591" stroke-width="3"/>
+ <path d="M210 380H540M210 415H540M210 450H540M1100 380H1430M1100 415H1430M1100 450H1430" stroke="#a1ae9b" stroke-width="2"/>
+ <path d="M760 200V625M820 200V625" stroke="#929f8b" stroke-width="12"/>
+ <path d="M0 329H1600" stroke="#b7b8a1" stroke-width="10"/>
+ <text x="1180" y="290" fill="#5e755c" font-size="24" letter-spacing="8" font-family="sans-serif">TAKUMI TRANSPORT</text>
+ <path d="M755 340L820 405M755 405L820 470M755 470L820 535M755 535L820 600" stroke="#dcc87d" stroke-width="12"/>
+</g>
+<g id="destination" opacity="0">
+ <path d="M-100 640V330L450 240L1000 330V640Z" fill="#a8b7a2"/><path d="M-100 350L450 260L1000 350" stroke="#738b72" stroke-width="12"/>
+ <path d="M130 640V370H540V640" fill="#72876e"/><path d="M155 390H515M155 425H515M155 460H515" stroke="#899b81"/>
+ <path d="M1070 640V430H1490V640Z" fill="#bdc6af"/><path d="M1110 480H1450M1110 520H1450" stroke="#819477" stroke-width="20"/>
+ <text x="140" y="330" font-size="26" fill="#496147" letter-spacing="7" font-family="sans-serif">THE NEXT SITE</text>
+</g>
+<path id="ground" d="M-2000 640H4000V1850H-2000Z" fill="#c4c9b8"/>
+<path id="road" d="M-2000 670H4000V1850H-2000Z" fill="#777e6e" opacity="0"/>
+<g id="road-markings" opacity="0" stroke="#d8dac3" stroke-width="5" stroke-dasharray="110 100"><path d="M-1000 755H3000"/></g>
+<path d="M0 666H1600" stroke="#99a48f"/>
+<g id="vehicle-camera"><g id="truck" transform="translate(0 0)">
+ <ellipse cx="813" cy="672" rx="615" ry="16" fill="#233d2b" opacity=".2" filter="url(#soft)"/>
+ <!-- Low-bed trailer, timber deck, outriggers and tie-down eyes. -->
+ <path d="M200 575H890L940 545H1180V581H955L907 611H200Z" fill="#324f3c" stroke="#1c3529" stroke-width="2"/>
+ <path d="M204 576H882L935 546H1156V553H940L887 584H204Z" fill="#c6b99b"/>
+ <path d="M212 590H895L944 562H1170" stroke="#8b9b7f" stroke-width="2"/>
+ <path d="M220 604H895" stroke="#64795c" stroke-width="4"/>
+ <path d="M220 613H542V622H220Z" fill="#1a2f23"/>
+ <path d="M265 600V619M555 600V619M686 600V619M830 600V619" stroke="#7b8f71" stroke-width="3"/>
+ <path d="M211 596H225M291 596H305M371 596H385M451 596H465M531 596H545M611 596H625M691 596H705M771 596H785M851 596H865M1000 566H1014M1080 566H1094" stroke="#e8c752" stroke-width="4"/>
+ <path d="M202 585H216V612H202" fill="#b8c0a8"/><path d="M197 602H210V610H197" fill="#d87764"/>
+ <path d="M290 628V614Q318 580 347 614L366 630M369 628V614Q396 580 425 614L444 630M447 628V614Q474 580 503 614L520 630" stroke="#3c5640" stroke-width="6"/>
+ <path d="M990 600H1350V625H990Z" fill="#172b22"/>
+ <path d="M1000 627Q1040 574 1080 627M1080 627Q1120 574 1160 627" stroke="#234333" stroke-width="9"/>
+ <path d="M1105 565H1185V594H1105Z" fill="#253b2b"/><path d="M1180 554H1255V603H1180Z" fill="url(#chrome)" stroke="#6f7e6a"/><path d="M1195 556V600M1240 556V600" stroke="#516355" stroke-width="4"/>
+ <!-- FH cab: high roof, pillar, side windows, swept yellow stripe with pink edges. -->
+ <path d="M1193 355Q1205 339 1237 339H1351Q1374 341 1382 368L1405 445V598Q1404 615 1386 618H1373Q1369 582 1335 580Q1298 578 1291 618H1194Z" fill="url(#paint)" stroke="#173b2b" stroke-width="2"/>
+ <path d="M1194 354Q1205 343 1238 343H1349Q1370 345 1375 363L1363 373H1200Z" fill="#3b604b"/>
+ <path d="M1203 373H1292L1324 438H1203Z" fill="#102c29" stroke="#7c9782" stroke-width="2"/>
+ <path d="M1213 379H1287L1311 429H1213Z" fill="url(#glass)"/>
+ <path d="M1217 381H1283L1293 402L1217 413Z" fill="#8fa695" opacity=".25"/>
+ <path d="M1304 374H1358L1384 444H1333Z" fill="url(#glass)" stroke="#6c8773" stroke-width="2"/>
+ <path d="M1311 379H1354L1360 395L1321 405Z" fill="#c7d4bb" opacity=".24"/>
+ <path d="M1200 446H1326L1399 457V488L1320 478H1198Z" fill="#ec8fb3"/>
+ <path d="M1200 451H1326L1399 462V483L1320 473H1198Z" fill="#f3d681"/>
+ <text x="1218" y="466" font-family="sans-serif" font-weight="900" font-size="12" fill="#182c21">たくみ</text><circle cx="1268" cy="462" r="7" stroke="#d15b76" stroke-width="1.5"/><text x="1264" y="466" font-family="sans-serif" font-size="10" fill="#c04b66">匠</text><text x="1279" y="466" font-family="sans-serif" font-weight="900" font-size="12" fill="#182c21">運送</text>
+ <path d="M1206 483H1316V569L1284 603H1206Z" stroke="#6c8871" stroke-width="1"/>
+ <path d="M1208 550L1313 511M1208 555L1313 516" stroke="#819782" stroke-width="1"/>
+ <rect x="1289" y="493" width="22" height="5" rx="2" fill="#0b211b" stroke="#718776"/>
+ <text x="1214" y="535" fill="#d0d9c8" font-family="sans-serif" font-size="8">NO.140</text>
+ <text x="1222" y="357" fill="#d9d7b9" font-family="Georgia,serif" font-size="9">Takumi Unsou, inc.</text>
+ <path d="M1341 454L1396 460V479L1338 472Z" fill="#273e35"/><path d="M1344 463L1392 469" stroke="#bbc6b8" stroke-width="2"/><circle cx="1370" cy="466" r="5" stroke="#dbe1d1" stroke-width="1"/>
+ <text x="1352" y="489" fill="#a4b3a5" font-family="sans-serif" font-size="7" letter-spacing="1">VOLVO</text>
+ <!-- front face and recognizable FH black grille -->
+ <path d="M1340 494L1401 501V546L1330 537Z" fill="#142a24"/><path d="M1344 499L1397 505V534L1337 527Z" fill="url(#mesh)"/>
+ <path d="M1337 541L1401 548V568L1324 558Z" fill="#172e24" stroke="#a2b29f" stroke-width="2"/>
+ <path d="M1331 548L1397 555M1330 553L1397 560" stroke="#819783" stroke-width="2"/>
+ <path d="M1324 564L1401 574V589L1320 582Z" fill="#173226" stroke="#80957e" stroke-width="2"/>
+ <path d="M1326 571L1398 580" stroke="#789171" stroke-width="2"/>
+ <path d="M1400 526L1385 554L1377 582L1397 586" stroke="#d5ddcb" stroke-width="6"/>
+ <path d="M1401 531L1393 550" stroke="#f4edcb" stroke-width="3"/>
+ <path d="M1382 588H1400V597H1379Z" fill="#dae0ce"/><path d="M1392 590V595" stroke="#97a48e" stroke-width="2"/>
+ <path d="M1370 604L1400 607V615H1367Z" fill="#bdc9b7"/>
+ <path d="M1362 608H1382V621H1362Z" fill="#1d4b33" stroke="#a4b495"/><text x="1365" y="618" fill="#e7e9d0" font-family="sans-serif" font-size="8">140</text>
+ <path d="M1195 611H1286L1290 619H1194Z" fill="url(#chrome)"/><path d="M1207 595H1278V603H1207Z" fill="#283b2c" stroke="#b8c7ae"/>
+ <path d="M1302 399L1323 396L1332 428" stroke="#243c30" stroke-width="4"/><rect x="1310" y="400" width="12" height="32" rx="4" fill="#253e33" stroke="#8aa08a"/>
+ <path d="M1206 354L1200 330M1356 352L1364 327" stroke="#48614b" stroke-width="1"/>
+ <rect x="1210" y="335" width="13" height="5" rx="2" fill="#a6bd90"/><rect x="1340" y="336" width="11" height="5" rx="2" fill="#d1c98d"/>
+ <path d="M1187 370H1195V570H1187Z" fill="#1b3025"/>
+'''+wheels+'''
+<g id="cargo">
+ <path d="M535 541H852V575H535Z" fill="#897b57"/><path d="M544 541V574M583 541V574M803 541V574M843 541V574" stroke="#c1ad76" stroke-width="7"/>
+ <path d="M552 397L794 380L840 401V541H552Z" fill="url(#box)" stroke="#607563" stroke-width="2"/>
+ <path d="M552 397L794 380L840 401L596 417Z" fill="#d0d6c7"/>
+ <path d="M794 380V521L840 541V401Z" fill="#748975"/>
+ <path d="M565 419H777V519H565Z" fill="#a3b39f" stroke="#6c816a"/>
+ <path d="M574 433H717V494H574Z" fill="#567363"/><path d="M581 440H710V487H581Z" fill="#254b3c"/><path d="M590 447H682M590 455H646M590 463H670" stroke="#a2bb91" stroke-width="2"/>
+ <path d="M730 430H764V494H730Z" fill="#c5cfbc"/><circle cx="747" cy="446" r="5" fill="#d7cf8a"/><circle cx="747" cy="466" r="5" fill="#8ca080"/><circle cx="747" cy="485" r="4" fill="#344f3b"/>
+ <path d="M572 508H763" stroke="#6b826a" stroke-width="3"/>
+ <path d="M571 398V535M775 385V535" stroke="#d4d7bc" stroke-width="5"/>
+ <path d="M582 411V526M787 397V529" stroke="#81967c" stroke-width="1"/>
+ <rect x="620" y="508" width="66" height="17" fill="#d7d9bf"/><text x="628" y="519" font-size="7" letter-spacing="1" fill="#466047" font-family="sans-serif">PRECISION</text>
+ <path d="M809 418V512M819 423V517" stroke="#506e57" stroke-width="3"/>
+</g>
+<g id="straps" stroke="#d8b34d" stroke-width="5"><path d="M548 583L567 398L578 396L590 583"/><path d="M772 583L782 386L795 387L837 583"/></g>
+<g id="strap-buckles" fill="#bcc4a1" stroke="#647457"><rect x="554" y="541" width="12" height="20" rx="2"/><rect x="784" y="539" width="12" height="20" rx="2"/></g>
+</g>
+<g id="crane">
+ <path d="M70 150H1550" stroke="#9baf91" stroke-width="17"/>
+ <path d="M110 134H1510V167H110Z" fill="#b8bd8e" stroke="#889d7d" stroke-width="2"/>
+ <path d="M125 138L155 163L185 138L215 163L245 138L275 163L305 138L335 163L365 138L395 163L425 138L455 163L485 138L515 163L545 138L575 163L605 138L635 163L665 138L695 163L725 138L755 163L785 138L815 163L845 138L875 163L905 138L935 163L965 138L995 163L1025 138L1055 163L1085 138L1115 163L1145 138L1175 163L1205 138L1235 163L1265 138L1295 163L1325 138L1355 163L1385 138L1415 163L1445 138L1475 163" stroke="#8e9c70" stroke-width="2"/>
+ <rect x="637" y="157" width="59" height="21" fill="#5d7754"/><g id="crane-cables"><path d="M653 174V270M682 174V270" stroke="#455d44" stroke-width="2"/></g><g id="crane-hook"><rect x="654" y="264" width="27" height="19" fill="#d7c367"/><path d="M667 282V295Q686 312 672 323Q655 334 648 318" stroke="#526b48" stroke-width="5"/><path id="lifting-slings" d="M667 323L570 397M667 323L788 385" stroke="#788773" stroke-width="2"/></g>
+</g>
+</g><g id="guides" stroke="#65785c" opacity=".4"><path d="M534 709H853M534 699V719M853 699V719"/><path d="M1470 340V635M1460 340H1480M1460 635H1480"/></g>
+<g id="scene-labels" font-family="monospace" fill="#536c4e" font-size="11" letter-spacing="2"><text x="600" y="735">PRECISION / CARE</text><text x="1488" y="500" transform="rotate(-90 1488 500)">VOLVO FH — NO.140</text></g>
+</svg>'''
+Path('src/scene.svg').write_text(svg)

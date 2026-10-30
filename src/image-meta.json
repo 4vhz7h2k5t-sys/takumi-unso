@@ -1,0 +1,38 @@
+{
+  "team": {
+    "width": 1080,
+    "height": 810
+  },
+  "fleet": {
+    "width": 1800,
+    "height": 1350
+  },
+  "trailer": {
+    "width": 640,
+    "height": 480
+  },
+  "quon": {
+    "width": 1800,
+    "height": 1350
+  },
+  "evening": {
+    "width": 1800,
+    "height": 1350
+  },
+  "volvo-work": {
+    "width": 1800,
+    "height": 1350
+  },
+  "lowbed": {
+    "width": 640,
+    "height": 480
+  },
+  "office": {
+    "width": 1800,
+    "height": 1350
+  },
+  "steel": {
+    "width": 1800,
+    "height": 1350
+  }
+}

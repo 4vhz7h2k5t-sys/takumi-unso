@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-30T04:44:15.985Z",
+  "base": "https://takumi-unso.ur24-jp.workers.dev",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "path": "/company/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "path": "/recruit/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "path": "/admin/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "path": "/api/recruitment",
+      "status": 200,
+      "jobs": 2,
+      "version": 1
+    },
+    {
+      "cmsAuthentication": true,
+      "secureCookie": true,
+      "privateApiGuard": true,
+      "notFound": true
+    }
+  ]
+}

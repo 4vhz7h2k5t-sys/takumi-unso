@@ -1,0 +1,86 @@
+[
+  {
+    "failedImages": [],
+    "firstImage": "http://127.0.0.1:8793/images/volvo-work-480.webp",
+    "page": "/",
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "failedImages": [],
+    "firstImage": "http://127.0.0.1:8793/images/fleet-480.webp",
+    "page": "/company/",
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "failedImages": [],
+    "firstImage": "http://127.0.0.1:8793/images/evening-480.webp",
+    "page": "/recruit/",
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "failedImages": [],
+    "firstImage": "http://127.0.0.1:8793/images/volvo-work-480.webp",
+    "page": "/",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "failedImages": [],
+    "firstImage": "http://127.0.0.1:8793/images/fleet-480.webp",
+    "page": "/company/",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "failedImages": [],
+    "firstImage": "http://127.0.0.1:8793/images/evening-480.webp",
+    "page": "/recruit/",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "failedImages": [],
+    "firstImage": "http://127.0.0.1:8793/images/volvo-work-480.webp",
+    "page": "/",
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "failedImages": [],
+    "firstImage": "http://127.0.0.1:8793/images/fleet-960.webp",
+    "page": "/company/",
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "failedImages": [],
+    "firstImage": "http://127.0.0.1:8793/images/evening-960.webp",
+    "page": "/recruit/",
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "failedImages": [],
+    "firstImage": "http://127.0.0.1:8793/images/volvo-work-960.webp",
+    "page": "/",
+    "scrollWidth": 1440,
+    "width": 1440
+  },
+  {
+    "failedImages": [],
+    "firstImage": "http://127.0.0.1:8793/images/fleet.webp",
+    "page": "/company/",
+    "scrollWidth": 1440,
+    "width": 1440
+  },
+  {
+    "failedImages": [],
+    "firstImage": "http://127.0.0.1:8793/images/evening.webp",
+    "page": "/recruit/",
+    "scrollWidth": 1440,
+    "width": 1440
+  }
+]

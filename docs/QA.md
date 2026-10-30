@@ -1,0 +1,47 @@
+# 検証記録 — 2026-10-30
+
+## 実行環境
+
+macOS / Google Chrome。画面サイズはブラウザーのviewportを変更して検証。実機iPhone・Android / Safariでの検証は未実施。
+
+## 確認結果
+
+- ビルド成功 (`npm run build`)。
+- 静的チェック成功 (`npm run check`)。各ページの日本語lang、h1が1つ、meta robots、非公式表記、全ローカル画像・JS・CSS参照先を確認。
+- TOP / COMPANY / RECRUITを320×740・390×844・768×1024・1440×1000で確認。全12組合せでscrollWidthとviewport幅が一致、横スクロールなし、画像エラーなし。
+- 390×844のモバイル表示を視覚確認。トップ、会社、採用、募集条件の開閉、輸送シーンを確認。
+- 輸送4工程のボタン移動とスクロール同期を確認。車両・貨物・クレーンを共通カメラで縮尺変更し、モバイルでタイヤ底辺と路面上端が約2px以内に一致。
+- 背景・文字色・工程表示はスクロール目標値ではなく実アニメーション進行に同期。速い工程移動時のずれを修正。
+- モバイルナビゲーションの開閉、Escapeで閉じる動作、閉じたナビゲーションのinert、開いている間の本文inertとフォーカス制御を実装。
+- 本文へのスキップ、各工程ボタン、募集条件のnative detailsを利用できる。
+- CMSのログイン画面と認証後の2職種の編集画面をブラウザーで確認。
+- JavaScriptコンソールのerrorログなし。
+- CSS/JSのprefers-reduced-motion対応をコード確認。OS設定を変えた実ブラウザー検証は未実施。
+- no-JSでも初期職種紹介はHTMLに存在。API取得失敗時は公開資料に基づく案内に切り替え、最新募集情報と区別。
+
+## CMS自動検証
+
+`node scripts/test-cms.mjs` をローカルWorkers + D1に対して実行し成功。
+
+1. 未認証の管理APIを401で拒否。
+2. 異なるOriginのログイン要求を403で拒否。
+3. 誤った管理キーを401で拒否。
+4. 正しい管理キーで認証、HttpOnly / SameSite=Strictセッション。
+5. 募集内容を更新し、公開APIに保存値が反映。
+6. 古いversionによる更新を409で拒否。
+7. 不正なデータを400で拒否。
+8. テスト前の掲載内容を復元。
+9. ログアウトでセッションCookieを失効。
+10. noindexヘッダー・CSP・未知URLの404を確認。
+
+## デプロイ
+
+Cloudflare Workers: `takumi-unso`。D1: `takumi-unso-cms`。
+管理キーはCloudflare Secret `ADMIN_KEY`に登録。ローカル `.dev.vars`（600、Git管理対象外）を参照。
+公開URL: https://takumi-unso.ur24-jp.workers.dev/
+
+本番で全3ページとCMS画面のHTTP 200、meta robots・X-Robots-Tag、robots.txt、募集データ取得、管理認証・Secure Cookie・ログアウト・未認証401・未知ページ404を確認済み。`docs/production-check.json` に記録。
+
+レスポンシブ画像を480・960・原寸で出し分け。390px表示ではトップ写真に約42KBの480px版が選ばれることを確認。最終12組合せの実測は `docs/responsive-check.json`。
+
+CMS管理キーを画面・ログ・Gitに出力していないことを確認。

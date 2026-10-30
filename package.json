@@ -1,0 +1,20 @@
+{
+  "name": "takumi-unso",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/pages.mjs && vite --host 127.0.0.1",
+    "build": "node scripts/pages.mjs && vite build",
+    "preview": "wrangler dev --ip 127.0.0.1 --port 8793",
+    "deploy": "npm run build && wrangler deploy",
+    "check": "node scripts/check.mjs"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0",
+    "wrangler": "^4.155.0"
+  }
+}
