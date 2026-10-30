@@ -1,0 +1,42 @@
+[
+  {
+    "bandBackground": "rgb(239, 208, 138)",
+    "bandLeft": 0,
+    "bandRight": 320,
+    "bottomBorder": "rgb(230, 148, 172)",
+    "oldRoute": 0,
+    "scrollWidth": 320,
+    "topBorder": "rgb(230, 148, 172)",
+    "width": 320
+  },
+  {
+    "bandBackground": "rgb(239, 208, 138)",
+    "bandLeft": 0,
+    "bandRight": 390,
+    "bottomBorder": "rgb(230, 148, 172)",
+    "oldRoute": 0,
+    "scrollWidth": 390,
+    "topBorder": "rgb(230, 148, 172)",
+    "width": 390
+  },
+  {
+    "bandBackground": "rgb(239, 208, 138)",
+    "bandLeft": 0,
+    "bandRight": 768,
+    "bottomBorder": "rgb(230, 148, 172)",
+    "oldRoute": 0,
+    "scrollWidth": 768,
+    "topBorder": "rgb(230, 148, 172)",
+    "width": 768
+  },
+  {
+    "bandBackground": "rgb(239, 208, 138)",
+    "bandLeft": 0,
+    "bandRight": 1440,
+    "bottomBorder": "rgb(230, 148, 172)",
+    "oldRoute": 0,
+    "scrollWidth": 1440,
+    "topBorder": "rgb(230, 148, 172)",
+    "width": 1440
+  }
+]

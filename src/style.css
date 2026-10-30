@@ -60,3 +60,8 @@ body:not([data-page=admin]) .section-label>.eyebrow:before{content:'';display:in
 @media(max-width:760px){.lightning-truck{left:-3%;width:106%;bottom:34%}.lightning-trace{height:120px;bottom:calc(34% - 52px)}.lightning-halo{stroke-width:10;opacity:.06}.strand-1 .lightning-halo{stroke-width:18;opacity:.075}}
 @media(prefers-reduced-motion:reduce){.lightning-opening{display:none}}
 @media(max-width:760px){.lightning-truck{left:2%;width:96%}}
+/* The Hero's information row is the yellow centre of a single straight livery band. */
+.hero-fullscreen .hero-bottom{position:absolute;inset:auto 0 0;width:100%;height:64px;padding:0 var(--gutter);border:0;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);background:var(--truck-yellow);color:var(--dark);gap:16px;z-index:4}.journey:before{display:none}
+.carry-rule{position:absolute;left:0;bottom:-1px;display:block;height:2px;width:36%;background:var(--pink);transform-origin:left;pointer-events:none}.service-photo>.carry-static-image{transform-origin:center}.carry-photo-word{pointer-events:none}
+@media(max-width:760px){.hero-fullscreen .hero-bottom{height:56px;padding:0 var(--gutter);gap:10px}.hero-fullscreen .hero-bottom>span:first-child{font-size:8px}.hero-fullscreen .hero-bottom>span:nth-child(2){font-size:8px}.carry-rule{width:28%}}
+@media(prefers-reduced-motion:reduce){.carry-static-image,.carry-photo-word,.service-item{transform:none!important}.carry-rule{transform:scaleX(1)!important}}

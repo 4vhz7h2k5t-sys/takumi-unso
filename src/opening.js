@@ -5,15 +5,15 @@ import truck from './truck-loader.svg?raw';
 export function initLightningOpening(reduced) {
   if (document.body.dataset.page !== 'top' || reduced) return;
   try {
-    if (sessionStorage.getItem('takumi-lightning-v1')) return;
-    sessionStorage.setItem('takumi-lightning-v1', '1');
+    if (sessionStorage.getItem('takumi-lightning-v2')) return;
+    sessionStorage.setItem('takumi-lightning-v2', '1');
   } catch { return; }
   const paths = [
-    'M-80 94H520L670 60H880L1030 94H1680',
-    'M-80 102H520L670 68H880L1030 102H1680',
-    'M-80 110H520L670 76H880L1030 110H1680',
+    'M-80 94H1680',
+    'M-80 102H1680',
+    'M-80 110H1680',
   ];
-  const sparkPositions = [[660,72],[675,66],[1030,102],[1045,104],[1335,101],[1350,103]];
+  const sparkPositions = [[660,94],[675,102],[1030,102],[1045,110],[1335,101],[1350,103]];
   const layer = document.createElement('div');
   layer.className = 'lightning-opening';
   layer.setAttribute('aria-hidden','true');
