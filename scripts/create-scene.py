@@ -99,30 +99,27 @@ svg+='''</g>
  <rect x="1210" y="335" width="13" height="5" rx="2" fill="#a6bd90"/><rect x="1340" y="336" width="11" height="5" rx="2" fill="#d1c98d"/>
  <path d="M1187 370H1195V570H1187Z" fill="#1b3025"/>
 '''+wheels+'''
-<g id="cargo">
- <path d="M535 541H852V575H535Z" fill="#897b57"/><path d="M544 541V574M583 541V574M803 541V574M843 541V574" stroke="#c1ad76" stroke-width="7"/>
- <path d="M552 397L794 380L840 401V541H552Z" fill="url(#box)" stroke="#607563" stroke-width="2"/>
- <path d="M552 397L794 380L840 401L596 417Z" fill="#d0d6c7"/>
- <path d="M794 380V521L840 541V401Z" fill="#748975"/>
- <path d="M565 419H777V519H565Z" fill="#a3b39f" stroke="#6c816a"/>
- <path d="M574 433H717V494H574Z" fill="#567363"/><path d="M581 440H710V487H581Z" fill="#254b3c"/><path d="M590 447H682M590 455H646M590 463H670" stroke="#a2bb91" stroke-width="2"/>
- <path d="M730 430H764V494H730Z" fill="#c5cfbc"/><circle cx="747" cy="446" r="5" fill="#d7cf8a"/><circle cx="747" cy="466" r="5" fill="#8ca080"/><circle cx="747" cy="485" r="4" fill="#344f3b"/>
- <path d="M572 508H763" stroke="#6b826a" stroke-width="3"/>
- <path d="M571 398V535M775 385V535" stroke="#d4d7bc" stroke-width="5"/>
- <path d="M582 411V526M787 397V529" stroke="#81967c" stroke-width="1"/>
- <rect x="620" y="508" width="66" height="17" fill="#d7d9bf"/><text x="628" y="519" font-size="7" letter-spacing="1" fill="#466047" font-family="sans-serif">PRECISION</text>
- <path d="M809 418V512M819 423V517" stroke="#506e57" stroke-width="3"/>
-</g>
-<g id="straps" stroke="#d8b34d" stroke-width="5"><path d="M548 583L567 398L578 396L590 583"/><path d="M772 583L782 386L795 387L837 583"/></g>
-<g id="strap-buckles" fill="#bcc4a1" stroke="#647457"><rect x="554" y="541" width="12" height="20" rx="2"/><rect x="784" y="539" width="12" height="20" rx="2"/></g>
+<g id="cargo"><path d="M290 328L825 302L879 324V574H290Z" fill="#8fa17d" stroke="#4b684b" stroke-width="3"/><path d="M290 328L825 302L879 324L343 350Z" fill="#b7c2a1"/><path d="M825 302L879 324V574L825 553Z" fill="#607c59"/><path d="M302 340H817V562H302Z" fill="#94a77e"/><path d="M315 330V565" stroke="#647e63" stroke-width="5"/><path d="M320 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M338 330V565" stroke="#647e63" stroke-width="5"/><path d="M343 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M361 330V565" stroke="#647e63" stroke-width="5"/><path d="M366 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M384 330V565" stroke="#647e63" stroke-width="5"/><path d="M389 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M407 330V565" stroke="#647e63" stroke-width="5"/><path d="M412 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M430 330V565" stroke="#647e63" stroke-width="5"/><path d="M435 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M453 330V565" stroke="#647e63" stroke-width="5"/><path d="M458 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M476 330V565" stroke="#647e63" stroke-width="5"/><path d="M481 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M499 330V565" stroke="#647e63" stroke-width="5"/><path d="M504 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M522 330V565" stroke="#647e63" stroke-width="5"/><path d="M527 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M545 330V565" stroke="#647e63" stroke-width="5"/><path d="M550 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M568 330V565" stroke="#647e63" stroke-width="5"/><path d="M573 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M591 330V565" stroke="#647e63" stroke-width="5"/><path d="M596 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M614 330V565" stroke="#647e63" stroke-width="5"/><path d="M619 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M637 330V565" stroke="#647e63" stroke-width="5"/><path d="M642 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M660 330V565" stroke="#647e63" stroke-width="5"/><path d="M665 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M683 330V565" stroke="#647e63" stroke-width="5"/><path d="M688 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M706 330V565" stroke="#647e63" stroke-width="5"/><path d="M711 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M729 330V565" stroke="#647e63" stroke-width="5"/><path d="M734 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M752 330V565" stroke="#647e63" stroke-width="5"/><path d="M757 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M775 330V565" stroke="#647e63" stroke-width="5"/><path d="M780 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M798 330V565" stroke="#647e63" stroke-width="5"/><path d="M803 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M821 330V565" stroke="#647e63" stroke-width="5"/><path d="M826 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M844 330V565" stroke="#647e63" stroke-width="5"/><path d="M849 332V564" stroke="#b6c1a0" stroke-width="2"/><path d="M290 328H825M290 572H879" stroke="#c1c9a7" stroke-width="7"/><text x="360" y="450" font-size="43" font-family="sans-serif" font-weight="700" letter-spacing="6" fill="#e7ead1">TAKUMI</text><text x="365" y="478" font-size="11" font-family="monospace" letter-spacing="4" fill="#e7ead1">THE NEXT MOVE.</text><path d="M840 340V555M865 347V563" stroke="#c0c9a8" stroke-width="3"/></g>
+<g id="straps" stroke="#d8b34d" stroke-width="5"><path d="M350 583L355 326L369 325L377 583"/><path d="M771 583L778 304L792 304L837 583"/></g>
+<g id="strap-buckles" fill="#bcc4a1" stroke="#647457"><rect x="359" y="541" width="12" height="20" rx="2"/><rect x="784" y="539" width="12" height="20" rx="2"/></g>
 </g>
 <g id="crane">
  <path d="M70 150H1550" stroke="#9baf91" stroke-width="17"/>
  <path d="M110 134H1510V167H110Z" fill="#b8bd8e" stroke="#889d7d" stroke-width="2"/>
  <path d="M125 138L155 163L185 138L215 163L245 138L275 163L305 138L335 163L365 138L395 163L425 138L455 163L485 138L515 163L545 138L575 163L605 138L635 163L665 138L695 163L725 138L755 163L785 138L815 163L845 138L875 163L905 138L935 163L965 138L995 163L1025 138L1055 163L1085 138L1115 163L1145 138L1175 163L1205 138L1235 163L1265 138L1295 163L1325 138L1355 163L1385 138L1415 163L1445 138L1475 163" stroke="#8e9c70" stroke-width="2"/>
- <rect x="637" y="157" width="59" height="21" fill="#5d7754"/><g id="crane-cables"><path d="M653 174V270M682 174V270" stroke="#455d44" stroke-width="2"/></g><g id="crane-hook"><rect x="654" y="264" width="27" height="19" fill="#d7c367"/><path d="M667 282V295Q686 312 672 323Q655 334 648 318" stroke="#526b48" stroke-width="5"/><path id="lifting-slings" d="M667 323L570 397M667 323L788 385" stroke="#788773" stroke-width="2"/></g>
+ <rect x="637" y="157" width="59" height="21" fill="#5d7754"/><g id="crane-cables"><path d="M653 174V213M682 174V213" stroke="#455d44" stroke-width="2"/></g><g id="crane-hook"><rect x="654" y="207" width="27" height="19" fill="#d7c367"/><path d="M667 220V229Q686 245 672 252Q655 263 648 247" stroke="#526b48" stroke-width="5"/><path id="lifting-slings" d="M667 252L355 326M667 252L792 304" stroke="#788773" stroke-width="2"/></g>
 </g>
 </g><g id="guides" stroke="#65785c" opacity=".4"><path d="M534 709H853M534 699V719M853 699V719"/><path d="M1470 340V635M1460 340H1480M1460 635H1480"/></g>
 <g id="scene-labels" font-family="monospace" fill="#536c4e" font-size="11" letter-spacing="2"><text x="600" y="735">PRECISION / CARE</text><text x="1488" y="500" transform="rotate(-90 1488 500)">VOLVO FH — NO.140</text></g>
 </svg>'''
 Path('src/scene.svg').write_text(svg)
+
+# Keep the opening truck synchronized with the main scene illustration.
+import xml.etree.ElementTree as ET
+root = ET.fromstring(svg)
+ns = {'s': 'http://www.w3.org/2000/svg'}
+loader = ET.Element('svg', {'xmlns': 'http://www.w3.org/2000/svg', 'viewBox': '180 290 1260 400', 'fill': 'none'})
+loader.append(root.find('s:defs', ns))
+loader.append(root.find('.//s:g[@id="truck"]', ns))
+ET.register_namespace('', 'http://www.w3.org/2000/svg')
+Path('src/truck-loader.svg').write_text(ET.tostring(loader, encoding='unicode'))

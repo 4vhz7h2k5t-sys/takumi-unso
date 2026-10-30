@@ -1,3 +1,5 @@
+import {initEffects} from './effects.js';
+import {initContact} from './contact.js';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import scene from './scene.svg?raw';
@@ -22,12 +24,12 @@ function initJourney(){
  function showStep(i){if(current===i)return;current=i;$('.journey-number').textContent=`0${i+1} / 04`;$('.journey-en').textContent=steps[i].en;$('.journey-text h2').innerHTML=steps[i].ja;$('.journey-description').innerHTML=steps[i].desc;$('.annotation-text').textContent=steps[i].label;$$('[data-chapter]').forEach((b,n)=>n===i?b.setAttribute('aria-current','step'):b.removeAttribute('aria-current'));}
  const tl=gsap.timeline({paused:true,defaults:{ease:'power1.inOut'}});
  gsap.set($('#vehicle-camera'),{scale:mobile?.66:1,svgOrigin:'800 660'});
- gsap.set($('#cargo'),{y:-95});gsap.set($('#crane-hook'),{y:-95});gsap.set([$('#straps'),$('#strap-buckles')],{autoAlpha:0});
+ gsap.set($('#cargo'),{y:-34});gsap.set($('#crane-hook'),{y:-34});gsap.set([$('#straps'),$('#strap-buckles')],{autoAlpha:0});
  const strapPaths=$$('#straps path');strapPaths.forEach(p=>{const len=p.getTotalLength();gsap.set(p,{strokeDasharray:len,strokeDashoffset:len})});
  tl.to({}, {duration:12},0)
  .to($('#cargo'),{y:0,duration:1.65},.3).to($('#crane-hook'),{y:0,duration:1.65},.3)
  .to($('#lifting-slings'),{autoAlpha:0,duration:.4},2)
- .to($('#crane-hook'),{y:-95,duration:1},2.2)
+ .to($('#crane-hook'),{y:-34,duration:1},2.2)
  .set($('#straps'),{autoAlpha:1},3).to(strapPaths,{strokeDashoffset:0,duration:1.15,stagger:.15},3)
  .to($('#strap-buckles'),{autoAlpha:1,duration:.4},4)
  .to($('#warehouse'),{x:-600,autoAlpha:0,duration:1.2},5)
@@ -53,10 +55,10 @@ function initJourney(){
  .to($('#crane-hook'),{y:0,duration:.65},10)
  .to($('#lifting-slings'),{autoAlpha:1,duration:.3},10.5)
  .to([$('#straps'),$('#strap-buckles')],{autoAlpha:0,duration:.35},10.6)
- .to($('#cargo'),{y:-95,duration:.9},10.95)
- .to($('#crane-hook'),{y:-95,duration:.9},10.95);
+ .to($('#cargo'),{y:-34,duration:.9},10.95)
+ .to($('#crane-hook'),{y:-34,duration:.9},10.95);
  function update(p){showStep(Math.min(3,Math.floor(p*4)));stage.classList.toggle('is-night',p>.505&&p<.79);gsap.set($('.journey-progress>i'),{scaleX:p})}
- tl.eventCallback('onUpdate',()=>{const y=Number(gsap.getProperty($('#crane-hook'),'y'));$('#crane-cables path').setAttribute('d',`M653 174V${270+y}M682 174V${270+y}`);update(tl.progress())});
+ tl.eventCallback('onUpdate',()=>{const y=Number(gsap.getProperty($('#crane-hook'),'y'));$('#crane-cables path').setAttribute('d',`M653 174V${213+y}M682 174V${213+y}`);update(tl.progress())});
  if(!reduced){ScrollTrigger.create({trigger:section,start:'top top',end:'bottom bottom',scrub:.65,animation:tl,invalidateOnRefresh:true});showStep(0)}else{tl.progress(.37);showStep(1);gsap.set($('.journey-progress>i'),{scaleX:.37})}
  $$('[data-chapter]').forEach(b=>b.addEventListener('click',()=>{const i=Number(b.dataset.chapter);const p=[.01,.29,.57,.86][i];if(reduced){tl.progress(p);update(p)}else{const top=section.getBoundingClientRect().top+scrollY;window.scrollTo({top:top+(section.offsetHeight-innerHeight)*p,behavior:'smooth'})}}));
  // Refresh when the responsive layout changes, preserving the real vehicle proportions.
@@ -71,3 +73,5 @@ function renderJobs(data,offline=false){
 }
 async function initRecruitment(){if(!document.querySelector('#job-list'))return;try{const r=await fetch('/api/recruitment',{signal:AbortSignal.timeout(6000)});if(!r.ok)throw new Error('Unable to load');const data=await r.json();if(!Array.isArray(data.jobs))throw new Error('Invalid response');renderJobs(data)}catch{renderJobs(initialRecruitment,true)}}
 initJourney();initRecruitment();if(document.body.dataset.page==='admin')initAdmin();
+
+initEffects(reduced);initContact();

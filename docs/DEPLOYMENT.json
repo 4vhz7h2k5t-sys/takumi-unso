@@ -1,10 +1,10 @@
 {
   "url": "https://takumi-unso.ur24-jp.workers.dev/",
   "worker": "takumi-unso",
-  "versionId": "c64d5b82-fa52-4711-a941-62d5229cdd8b",
-  "sourceCommit": "f158a89",
+  "versionId": "cea428eb-69a3-45f0-a42a-9a07053dcd7b",
   "repository": "https://github.com/4vhz7h2k5t-sys/takumi-unso",
   "database": "takumi-unso-cms",
   "cms": "https://takumi-unso.ur24-jp.workers.dev/admin/",
-  "browserConsoleErrors": 0
+  "browserConsoleErrors": 0,
+  "designRevision": 2
 }
